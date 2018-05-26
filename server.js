@@ -13,15 +13,19 @@ app.get('/', function (req, res) {
 	getFileFromPath("./HTML/index.html", res);
 });
 
+app.get('/Templates/*', function (req, res) {
+	getFileFromPath("./Build/HTML/Templates/" + req.url.split("/").pop(), res);
+});
+
 // *********************** static files ************************** //
 
 app.get('/JS/*', function(req, res) {
-	let filePath = "./JS/" + req.url.split("/").pop();
+	let filePath = "./Build/JS/" + req.url.split("/").pop();
 	getFileFromPath(filePath, res, {'Content-Type': 'application/javascript'});
 });
 
 app.get('/CSS/*', function(req, res) {
-	let filePath = "./CSS/" + req.url.split("/").pop();
+	let filePath = "./Build/CSS/" + req.url.split("/").pop();
 	getFileFromPath(filePath, res, {'Content-Type': 'text/css'});
 });
 

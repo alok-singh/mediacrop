@@ -3,15 +3,51 @@
 
 <head>
     <title>Media Crop</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/styles.css"></link>
     <script type="text/javascript" src="http://code.angularjs.org/1.2.13/angular.js"></script>
-    <script type="text/javascript" src="./JS/app.js"></script>
+    <script type="text/javascript" src="/JS/app.min.js"></script>
 </head>
 
 <body ng-app="Mediacrop">
-    <div ng-controller="MediacropController">
-        <div select text="something" ng-repeat="i in [1,2,3,4,5]">
-            {{i}}
-        </div>
+	<div class="background">
+	    <div ng-controller="MediacropController" class="page-wrapper">
+			<div class="overlay" ng-if="playerHealth <= 0 || dragonHealth <=0">
+				<div class="overlay-message">
+					<div class="message" ng-if="playerHealth > 0">You Win. Do you want a re-match?</div>
+					<div class="message" ng-if="dragonHealth > 0">Dragon Win. Do you want a re-match?</div>
+					<div class="button-wrapper">
+						<div class="action-button" ng-click="reset()">Yes</div>
+						<div class="action-button" ng-click="closePopup()">No</div>
+					</div>
+				</div>
+			</div>
+	    	<div class="heath-container">
+	        	<heathbar health="playerHealth" title="Player"></heathbar>
+	        	<heathbar health="dragonHealth" title="Dragon"></heathbar>
+	        </div>
+	        <div class="character-container">
+	        	<div class="character-wrapper">
+	        		<character image="player.png"></character>
+				</div>
+				<div class="character-wrapper">    		
+	        		<character image="dragon.png"></character>
+	        	</div>
+	        </div>
+	        <div class="bottom-content">
+	        	<div class="actions">
+	        		<div class="action-button" ng-click="attack()">Attack</div>
+	        		<div class="action-button" ng-click="blast()">Blast</div>
+	        		<div class="action-button" ng-click="heal()">Heal</div>
+	        		<div class="action-button" ng-click="reset('player')">Give Up</div>
+	        	</div>
+	        	<div class="logo">
+	        		<img src="/IMG/logo.png">
+	        	</div>
+	        	<div class="comentry-wrapper">
+	        		<div class="comentry" ng-repeat="commentry in commentryList track by $index">{{commentry}}</div>
+	        	</div>
+	        </div>
+	    </div>
     </div>
 </body>
 

@@ -1,0 +1,132 @@
+* {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	margin: 0px;
+}
+
+@themeBlue: #7e7fc0;
+
+.u-ib {
+    display: inline-block;
+}
+
+.background {
+	background-image: url('/IMG/bg.png');
+	height: 100vh;
+	width: 100vw;
+	min-width: 1200px;
+	min-height: 1000px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	.page-wrapper {
+		width: 90vw;
+		margin: auto;
+		padding-top: 40px;
+	}
+}
+
+
+.heath-container {
+	display: flex;
+	justify-content: space-between;
+	.health-bar {
+	    width: 600px;
+	    height: 50px;
+	    border: 1px solid #ffffff;
+	    border-radius: 30px;
+	    overflow: hidden;
+		.left-health {
+		    height: 100%;
+		    background: rgba(146, 3, 3, 0.72);
+		}
+	}
+	.title{
+		font-size: 30px;
+	    color: #7e7fc0;
+	    font-weight: bold;
+	    padding: 5px 20px;
+	}
+}
+
+
+.character-container {
+    display: flex;
+    justify-content: space-between;
+
+	.character-wrapper {
+		padding-top: 40px;
+	    width: 40%;
+	    text-align: center;
+	}
+
+	.character-image {
+		height: 400px;
+		img {
+		    max-width: 100%;
+		    max-height: 100%;
+		}
+	}
+}
+
+
+.bottom-content {
+    display: flex;
+    background: rgba(255, 255, 255, 0.5);
+    justify-content: space-around;
+    border-radius: 60px;
+    text-align: center;
+    padding: 10px;
+	.logo {
+	    height: 200px;
+	    width: 20%;
+	    img {
+    	    height: 100%;
+    	}
+	}
+	.actions {
+	    width: 35%;
+	    display: flex;
+	    flex-wrap: wrap;
+		.action-button {
+		    padding: 10px 30px;
+		    background: #1d1d1b;
+		    border-radius: 5px;
+		    margin: 6px;
+		    width: 45%;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: space-around;
+		    color: #fff;
+		    cursor: pointer;
+		}
+	}
+
+	.comentry-wrapper {
+	    width: 35%;
+	}
+
+}
+
+
+.overlay {
+    position: fixed;
+    background: rgba(255,255,255,0.72);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	.overlay-message {
+	    background: #333;
+	    width: 40%;
+	    margin: auto;
+	    padding: 40px;
+	    color: #fff;
+	    border-radius: 20px 0px;
+	    font-size: 29px;
+	    box-shadow: 1px 2px 3px #6f6f6f;
+	}
+}
