@@ -3,6 +3,9 @@
 ## To Start project
 - git clone https://github.com/alok-singh/mediacrop.git
 - cd mediacrop and run npm install
+- please install gulp if haven't done already 
+	- npm install gulp-cli -g
+	- npm install gulp -D
 - npm start
 - go to http://localhost:8080/dragonFight
 
