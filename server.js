@@ -10,9 +10,7 @@ const app = express();
 // *********************** pages routes ************************** //
 
 app.get('/dragonFight', function (req, res) {
-	let params = req.url.split("/");
-	let folderName = params.pop();
-	getFileFromPath(`./Build/HTML/dragonFight/index.html`, res);
+	getFileFromPath(`./Build/HTML/DragonFight/index.html`, res);
 });
 
 // *********************** static files ************************** //

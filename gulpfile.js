@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-csso');
@@ -30,7 +32,7 @@ gulp.task('dragonFightHtml', function() {
 
 gulp.task('dragonFightCss', function() {
     return gulp
-        .src('CSS/dragonFight/styles.less')
+        .src('CSS/DragonFight/styles.less')
         .pipe(less())
         .pipe(minifyCSS())
         .pipe(rename('app.dragonFight.css'))

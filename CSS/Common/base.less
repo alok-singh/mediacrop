@@ -1,5 +1,27 @@
+@import 'variables.less';
+
 * {
 	box-sizing: border-box;
 	font-family: sans-serif;
 	margin: 0px;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: @whiteColor; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: @themeBlackColor; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: @shadowColor; 
 }
