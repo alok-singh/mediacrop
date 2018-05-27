@@ -4,7 +4,13 @@ let minifyCSS = require('gulp-csso');
 let concat = require('gulp-concat');
 let gulpCopy = require('gulp-copy');
 
-gulp.task('js', function() {
+gulp.task('libs', function() {
+    return gulp.src('Libs/*.js')
+        .pipe(concat('app.libs.js'))
+        .pipe(gulp.dest('Build/JS'))
+})
+
+gulp.task('js', ['libs'], function() {
     return gulp.src('JS/**/*.js')
         .pipe(concat('app.min.js'))
         .pipe(gulp.dest('Build/JS'))
@@ -12,7 +18,7 @@ gulp.task('js', function() {
 
 gulp.task('html', function() {
     return gulp
-        .src('HTML/Templates/*.html')
+        .src('HTML/**/*.html')
         .pipe(gulpCopy('Build/'))
 });
 

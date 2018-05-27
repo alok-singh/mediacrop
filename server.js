@@ -10,7 +10,7 @@ const app = express();
 // *********************** pages routes ************************** //
 
 app.get('/', function (req, res) {
-	getFileFromPath("./HTML/index.html", res);
+	getFileFromPath("./Build/HTML/index.html", res);
 });
 
 app.get('/Templates/*', function (req, res) {
