@@ -1,9 +1,9 @@
-let gulp = require('gulp');
-let less = require('gulp-less');
-let minifyCSS = require('gulp-csso');
-let concat = require('gulp-concat');
-let gulpCopy = require('gulp-copy');
-let rename =  require('gulp-rename');
+var gulp = require('gulp');
+var less = require('gulp-less');
+var minifyCSS = require('gulp-csso');
+var concat = require('gulp-concat');
+var gulpCopy = require('gulp-copy');
+var rename =  require('gulp-rename');
 
 /*
      could have uglified files if required to deployed to production 
