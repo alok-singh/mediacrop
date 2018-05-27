@@ -9,15 +9,20 @@ const app = express();
 
 // *********************** pages routes ************************** //
 
-app.get('/', function (req, res) {
-	getFileFromPath("./Build/HTML/index.html", res);
-});
-
-app.get('/Templates/*', function (req, res) {
-	getFileFromPath("./Build/HTML/Templates/" + req.url.split("/").pop(), res);
+app.get('/dragonFight', function (req, res) {
+	let params = req.url.split("/");
+	let folderName = params.pop();
+	getFileFromPath(`./Build/HTML/dragonFight/index.html`, res);
 });
 
 // *********************** static files ************************** //
+
+app.get('/Templates/*', function (req, res) {
+	let params = req.url.split("/");
+	let fileName = params.pop();
+	let folderName = params.pop();
+	getFileFromPath(`./Build/HTML/${folderName}/Templates/${fileName}`, res);
+});
 
 app.get('/JS/*', function(req, res) {
 	let filePath = "./Build/JS/" + req.url.split("/").pop();
@@ -30,9 +35,12 @@ app.get('/CSS/*', function(req, res) {
 });
 
 app.get('/IMG/*', function(req, res) {
-	let filePath = "./Images/" + req.url.split("/").pop();
+	let params = req.url.split("/");
+	let fileName = params.pop();
+	let folderName = params.pop();
+	let filePath = `./Images/${folderName}/${fileName}`;
 	getFileFromPath(filePath, res, {
-		'Content-Type': 'image/webp', 
+		'Content-Type': 'image/png', 
 		'Cache-Control': 'public, max-age=31557600'
 	});
 });

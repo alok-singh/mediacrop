@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dragon Fight!</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/app.dragonFight.css"></link>
+    <script type="text/javascript" src="/JS/app.libs.js"></script>
+    <script type="text/javascript" src="/JS/app.dragonFlight.js"></script>
+</head>
+
+<body ng-app="Mediacrop">
+	<div class="background">
+	    <div ng-controller="MediacropController" class="page-wrapper">
+			<overlay></overlay>
+			<h1>Dragon Fight</h1>
+	    	<div class="heath-container">
+	        	<heathbar health="playerHealth" title="Player" class="player"></heathbar>
+	        	<heathbar health="dragonHealth" title="Dragon" class="dragon"></heathbar>
+	        </div>
+	        <div class="character-container">
+	        	<div class="character-wrapper">
+	        		<character image="player.png"></character>
+				</div>
+				<div class="character-wrapper">    		
+	        		<character image="dragon.png"></character>
+	        	</div>
+	        </div>
+	        <div class="bottom-content">
+	        	<div class="actions">
+	        		<button class="action-button" ng-disabled="!playerHealth || !dragonHealth" ng-click="attack()">Attack</button>
+	        		<button class="action-button" ng-disabled="!playerHealth || !dragonHealth" ng-click="blast()">Blast</button>
+	        		<button class="action-button" ng-disabled="!playerHealth || !dragonHealth || playerHealth == 100" ng-click="heal()">Heal</button>
+	        		<button class="action-button" ng-click="giveUp()">{{isForcedClose ? 'Result' : 'Give Up'}}</button>
+	        	</div>
+	        	<div class="logo">
+	        		<img src="/IMG/logo.png">
+	        	</div>
+	        	<div class="comentry-wrapper">
+	        		<div ng-if="!commentryList.length" class="commentry-fallback">No Comments to show</div>
+	        		<div ng-if="commentryList.length" class="comentry-title">Commentary</div>
+					<div ng-if="commentryList.length" class="comments">
+	        			<div class="comment" ng-repeat="commentry in commentryList track by $index">
+		        			<div class="comment-wrapper" ng-if="commentry.time">
+		        				<div class="u-ib date">{{commentry.time | date : 'HH:mm:ss'}}</div>
+		        				<div class="u-ib">{{commentry.comment}}</div>
+		        			</div>
+	        				<div class="comment-wrapper revert u-text-center" ng-if="!commentry.time">{{commentry.comment}}</div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+	    </div>
+    </div>
+</body>
+
+</html>

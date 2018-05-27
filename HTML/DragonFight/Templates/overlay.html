@@ -1,0 +1,11 @@
+<div class="overlay" ng-if="showModal()">
+	<div class="overlay-message">
+		<div class="message" ng-if="playerHealth > 0">You Win. Do you want a re-match?</div>
+		<div class="message" ng-if="dragonHealth > 0">Dragon Win. Do you want a re-match?</div>
+		<div class="message" ng-if="dragonHealth <= 0 && playerHealth <= 0">Match Draw. Do you want a re-match?</div>
+		<div class="button-wrapper">
+			<div class="action-button" ng-click="reset()">Yes</div>
+			<div class="action-button" ng-click="closePopup()">No</div>
+		</div>
+	</div>
+</div>

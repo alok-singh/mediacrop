@@ -3,6 +3,11 @@ let less = require('gulp-less');
 let minifyCSS = require('gulp-csso');
 let concat = require('gulp-concat');
 let gulpCopy = require('gulp-copy');
+let rename =  require('gulp-rename');
+
+/*
+     could have uglified files if required to deployed to production 
+*/
 
 gulp.task('libs', function() {
     return gulp.src('Libs/*.js')
@@ -10,28 +15,29 @@ gulp.task('libs', function() {
         .pipe(gulp.dest('Build/JS'))
 })
 
-gulp.task('js', ['libs'], function() {
-    return gulp.src('JS/**/*.js')
-        .pipe(concat('app.min.js'))
+gulp.task('dragonFightJS', ['libs'], function() {
+    return gulp.src('JS/DragonFight/**/*.js')
+        .pipe(concat('app.dragonFlight.js'))
         .pipe(gulp.dest('Build/JS'))
 });
 
-gulp.task('html', function() {
+gulp.task('dragonFightHtml', function() {
     return gulp
         .src('HTML/**/*.html')
         .pipe(gulpCopy('Build/'))
 });
 
 
-gulp.task('css', function() {
+gulp.task('dragonFightCss', function() {
     return gulp
-        .src('CSS/*.less')
+        .src('CSS/dragonFight/styles.less')
         .pipe(less())
         .pipe(minifyCSS())
-        .pipe(gulp.dest('Build/CSS'))
+        .pipe(rename('app.dragonFight.css'))
+        .pipe(gulp.dest('Build/CSS/'))
 });
 
 
 
-gulp.task('default', ['css', 'html', 'js']);
+gulp.task('default', ['dragonFightCss', 'dragonFightHtml', 'dragonFightJS']);
 

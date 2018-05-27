@@ -1,0 +1,106 @@
+@import "../Common/utility.less";
+@import "../Common/variables.less";
+@import "../Common/base.less";
+
+@import "healthBar.less";
+@import "character.less";
+@import "overlay.less";
+
+
+.background {
+	background-image: url('/IMG/DragonFight/bg.png');
+	height: 100vh;
+	width: 100vw;
+	min-width: 1200px;
+	min-height: 800px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	.page-wrapper {
+		width: 90vw;
+		margin: auto;
+		padding-top: 20px;
+
+		h1 {
+			text-align: center;
+			font-size: @extraLargeFontSize;
+			color: @whiteColor;
+		}
+	}
+}
+
+
+.bottom-content {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid @commentThemeColor;
+    .custom-linear-gradient(rgba(255,255,255,.5), rgba(20,20,20,.5));
+	.logo {
+	    height: 250px;
+	    width: 20%;
+	    img {
+    	    height: 100%;
+    	}
+	}
+	.actions {
+	    width: 35%;
+	    display: flex;
+	    flex-wrap: wrap;
+		.action-button {
+			padding: 10px 30px;
+		    background: @themeBlackColor;
+		    border-radius: 5px;
+		    margin: 10px;
+		    width: 45%;
+		    color: @whiteColor;
+		    cursor: pointer;
+		    font-size: @largeFontSize;
+		    &[disabled] {
+		        background: @disabledBackgroundColor;
+		        color: #eaeaea;
+		        cursor: not-allowed;
+		    }
+		}
+	}
+
+	.comentry-wrapper {
+	    width: 35%;
+	    .comments {
+	        height: 215px;
+	        overflow-y: scroll;
+		    .comment {
+		        background: @commentThemeColor;
+		        margin: 5px auto;
+		        overflow: hidden;
+		        border-radius: 5px;
+		        text-align: left;
+		        .comment-wrapper {
+		            padding: 10px;
+		        }
+		        .revert{
+		        	background: @themeBlackColor;
+    				color: @whiteColor;
+		        }
+		        .date {
+		        	margin-right: 10px;
+		        }
+		    }
+	    }
+	    .comentry-title {
+	        font-size: @largeFontSize;
+	    }
+	    .commentry-fallback {
+	        display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 90%;
+            color: @whiteColor;
+            margin: 12px 0;
+            border-radius: 10px;
+	    }
+	}
+
+}

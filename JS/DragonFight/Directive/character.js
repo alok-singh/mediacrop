@@ -1,9 +1,9 @@
 var app = angular.module("Mediacrop");
 
-app.directive("character", function(){
+app.directive("character", () => {
 	return {
 		restrict : 'EA',
-		templateUrl: 'Templates/character.html',
+		templateUrl: '/Templates/DragonFight/character.html',
 		scope: {
 			image: "@"
 		}

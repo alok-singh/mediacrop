@@ -1,0 +1,30 @@
+@import "../Common/utility.less";
+@import "../Common/variables.less";
+
+.heath-container {
+	display: flex;
+	justify-content: space-between;
+	.health-bar {
+	    width: 600px;
+	    height: 35px;
+	    border: 1px solid @whiteColor;
+	    border-radius: 30px;
+	    overflow: hidden;
+		.left-health {
+		    .custom-linear-gradient(rgba(146,3,3,.82), rgba(146,3,3,.4));
+		    height: 100%;
+		    color: @whiteColor;
+	        text-align: center;
+	        padding-top: 7px;
+		}
+	}
+	.title{
+		font-size: @largeFontSize;
+	    color: @whiteColor;
+	    font-weight: bold;
+	    padding: 5px 20px;
+	}
+	.dragon .title {
+	    text-align: right;
+	}
+}

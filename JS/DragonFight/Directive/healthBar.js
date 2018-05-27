@@ -1,9 +1,9 @@
 var app = angular.module("Mediacrop");
 
-app.directive("heathbar", function(){
+app.directive("heathbar", () => {
 	return {
 		restrict : 'EA',
-		templateUrl: 'Templates/healthBar.html',
+		templateUrl: '/Templates/DragonFight/healthBar.html',
 		scope: {
 			health: "=",
 			title: "@"
